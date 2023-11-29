@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicar sesión</title>
+</head>
+<style>
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0b128;
+        }
+nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: #444;
+        padding: 10px;
+        text-align: center;
+    }
+
+a {
+        justify-content: space-around;
+        background-color:blanchedalmond;
+        padding: 10px;
+        border-radius: 5px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    form{
+        padding: 10px;
+    }
+
+</style>
+
+<body>
+
+
+    <nav>
+
+        <div class="module">
+            <a href="/loginadm.html">Inicio de sesión Administrador</a>
+        </div>
+
+        <div class="module">
+            <a href="/registrar.html">Registrarse</a>
+        </div>
+
+    </nav>
+
+    <form>
+        <ul>
+			<li>
+				<label for="emailperson">Ingrese su correo: </label>
+                <br>
+				<input type="email" id="emailperson" name="emailp" required>
+			</li>
+			<li>
+				<label for="contra">Ingrese su contraseña: </label>
+                <br>
+				<input type="password" name="contra" required>
+			</li>
+    </form>
+    
+    <a href="index.html"><button>Ingresar</button></a>
+<br>
+    <a href="">Olvido su contraseña</a>
+<br>
+    <a href="registrar.html">Deseo registrarme</a>
+<br>
+    
+</body>
+</html>
