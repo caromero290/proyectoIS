@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Iniciar sesion</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<style>
+
+    body{
+	background-color: #C2BAA4;
+}
+#logo {
+	clear: both;
+	display: block;
+	margin: auto;
+}
+form {
+  margin: 100px auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #FF0000;
+  border-radius: 1em;
+}
+.sesion {
+	font-size: 30px;
+}
+form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+form label {
+  /* Tamaño y alineación uniforme */
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+
+.ini {
+  padding-left: 90px; /* mismo tamaño que los elementos de la etiqueta */
+}
+
+
+form button {
+  /* Este margen adicional representa aproximadamente el mismo espacio que el espacio
+     entre las etiquetas y sus campos de texto */
+  margin-left: .5em;
+}
+
+
+</style>
+
+<body>
+	<header>
+	<a href="index.html"><button>Volver a inicio</button></a>
+	<img id="logo" src="img/logo.png">
+	</header>
+
+	<form>
+		<p class="sesion">Inicio de Sesion para administrador</p>
+		<ul>
+			<li>
+				<label for="emailperson">Correo Electronico: </label>
+				<input type="email" id="emailperson" name="emailp" required>
+			</li>
+			<li>
+				<label for="contra">Contraseña: </label>
+				<input type="password" name="contra" required>
+			</li>
+
+			<a href="adm.html">Iniciar Sesión</a>
+
+            
+		</ul>
+		<p>¿Has olvidado la contraseña?<a href="recuperar.html">Recuperala!</a></p>
+	</form>
+
+</body>
+</html>

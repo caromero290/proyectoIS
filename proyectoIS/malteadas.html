@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malteadasadmin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0b128;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: #333;
+            background-color: #eee;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 48%; /* Para dejar un pequeño espacio entre las columnas */
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .add-product {
+            text-align: center;
+            margin-top:35px;
+            margin-right: 10px;
+            border-radius: 5px;
+            text-align: right;
+            max-height: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .menu{
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .columna {
+            width: 60%; /* Para dejar un pequeño espacio entre las columnas */
+            
+        }
+
+        h1{
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            color: #333;
+            background-color: #eee;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Comelones</h1>
+    </header>
+
+    <nav>
+        <a href="/nosotros.html" id="btnInicio">Nosotros</a>
+        <a href="/promociones.html" id="btnPromociones">Promociones</a>
+        <a href="/pizza.html" id="btnPromociones">Pizza</a>
+        <a href="/perros.html" id="btnPromociones">Perros Calientes</a>
+        <a href="/hamburguesa.html" id="btnPromociones">Hamburguesas</a>
+        
+    </nav>
+
+    <div class="add-product">
+        <button onclick="mostrarFormulario()">Agregar Nuevo Producto</button>
+    </div>
+
+    <div id="formulario" style="display:none;">
+        <!-- Formulario para agregar nuevo producto -->
+        <form id="addProductForm">
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+            <button type="button" onclick="agregarProducto()">Guardar Producto</button>
+        </form>
+    </div>
+
+    <h1> Menú </h1>
+
+    
+    <div class="menu">
+        <h2>Malteadas</h2>
+        <div class="columna">
+            <ul id="inicio">
+            </ul>
+        </div>
+
+        <!-- <div class="columna">
+          
+            <ul>
+                <br>
+                <div class="product-card">
+                    <img src="hamburguesa.jpg" alt="Hamburguesa">
+                    <h2>Malteada7</h2>
+                    <p>Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                    <button onclick="editarProducto(this)">Editar</button>
+                    <button onclick="eliminarProducto(this)">Eliminar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="hamburguesa.jpg" alt="Hamburguesa">
+                    <h2>Malteada8</h2>
+                    <p>Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                    <button onclick="editarProducto(this)">Editar</button>
+                    <button onclick="eliminarProducto(this)">Eliminar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="hamburguesa.jpg" alt="Hamburguesa">
+                    <h2>Malteada9</h2>
+                    <p>Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                    <button onclick="editarProducto(this)">Editar</button>
+                    <button onclick="eliminarProducto(this)">Eliminar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="hamburguesa.jpg" alt="Hamburguesa">
+                    <h2>Malteada10</h2>
+                    <p>Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                    <button onclick="editarProducto(this)">Editar</button>
+                    <button onclick="eliminarProducto(this)">Eliminar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="hamburguesa.jpg" alt="Hamburguesa">
+                    <h2>Malteada11</h2>
+                    <p>Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                    <button onclick="editarProducto(this)">Editar</button>
+                    <button onclick="eliminarProducto(this)">Eliminar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="hamburguesa.jpg" alt="Hamburguesa">
+                    <h2>Malteada12</h2>
+                    <p>Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                    <button onclick="editarProducto(this)">Editar</button>
+                    <button onclick="eliminarProducto(this)">Eliminar</button>
+                </div>
+
+                
+
+               
+                
+            </ul>
+        </div> -->
+
+    </div>
+        <script src="js/script.js"></script>
+</body>
+</html>
